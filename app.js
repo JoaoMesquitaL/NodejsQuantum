@@ -4,8 +4,14 @@ const port = 3000
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.json({message: 'Olá Mundo!'})
+})
+
+app.post("/submit", (req, res) =>{
+const {name, age} = req.body;
+
+  res.json({message: `meu nome é ${name} tenho ${age} anos`});
 })
 
 app.listen(port, () => {
